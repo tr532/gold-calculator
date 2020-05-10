@@ -39,6 +39,13 @@ public class UI extends javax.swing.JFrame {
                 // DIVision
                 answer = num / Double.parseDouble(jTextField1.getText());
                 jTextField1.setText(Double.toString(answer));
+                break;
+            
+            case 5:
+                // REMainder
+                answer = num % Double.parseDouble(jTextField1.getText());
+                jTextField1.setText(Double.toString(answer));
+                break;
         }
     }
     
@@ -471,7 +478,11 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "%");
+        
+        num = Double.parseDouble(jTextField1.getText());
+        calculation = 5;
+        jTextField1.setText("");
+        jLabel1.setText(num + "%");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
