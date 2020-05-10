@@ -475,7 +475,11 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "/");
+        
+        num = Double.parseDouble(jTextField1.getText());
+        calculation = 4;
+        jTextField1.setText("");
+        jLabel1.setText(num + "/");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -491,7 +495,11 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "x");
+        
+        num = Double.parseDouble(jTextField1.getText());
+        calculation = 3;
+        jTextField1.setText("");
+        jLabel1.setText(num + "x");
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -507,7 +515,11 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "-");
+        
+        num = Double.parseDouble(jTextField1.getText());
+        calculation = 2;
+        jTextField1.setText("");
+        jLabel1.setText(num + "-");
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
@@ -541,6 +553,7 @@ public class UI extends javax.swing.JFrame {
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // Call arithmetic operation
         arithmeticOperation();
+        jLabel1.setText("");
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
