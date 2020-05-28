@@ -16,8 +16,8 @@ public class UI extends javax.swing.JFrame {
     public void arithmeticOperation(){
         
         // This object has a method to limit output string
-        // Max of 10 numbers after comma
-        DecimalFormat decimalFormat = new DecimalFormat("#.##########");
+        // Max of 6 numbers after comma
+        DecimalFormat decimalFormat = new DecimalFormat("#.######");
         
         switch(calculation){
             
