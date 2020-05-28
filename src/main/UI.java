@@ -1,5 +1,7 @@
 package main;
 
+import java.text.DecimalFormat;
+
 public class UI extends javax.swing.JFrame {
 
     double num, answer;
@@ -13,6 +15,10 @@ public class UI extends javax.swing.JFrame {
     
     public void arithmeticOperation(){
         
+        // This object has a method to limit output string
+        // Max of 10 numbers after comma
+        DecimalFormat decimalFormat = new DecimalFormat("#.##########");
+        
         switch(calculation){
             
             case 1:
@@ -20,31 +26,34 @@ public class UI extends javax.swing.JFrame {
                 // Calculation and attribution to 'answer var'
                 answer = num + Double.parseDouble(jTextField1.getText()); 
                 // Displaying the result
-                jTextField1.setText(Double.toString(answer));
+                // jTextField1.setText(Double.toString(answer)); - former way to print
+                // format() method returns a String
+                jTextField1.setText(decimalFormat.format(answer)); 
                 break;
                 
             case 2:
                 // SUBstraction
                 answer = num - Double.parseDouble(jTextField1.getText());
-                jTextField1.setText(Double.toString(answer));
+                jTextField1.setText(decimalFormat.format(answer));
                 break;
                 
             case 3:
                 // MULTiplication
                 answer = num * Double.parseDouble(jTextField1.getText());
-                jTextField1.setText(Double.toString(answer));
+                jTextField1.setText(decimalFormat.format(answer));
                 break;
                 
             case 4:
                 // DIVision
                 answer = num / Double.parseDouble(jTextField1.getText());
-                jTextField1.setText(Double.toString(answer));
+                jTextField1.setText(decimalFormat.format(answer));
+                
                 break;
             
             case 5:
                 // REMainder
                 answer = num % Double.parseDouble(jTextField1.getText());
-                jTextField1.setText(Double.toString(answer));
+                jTextField1.setText(decimalFormat.format(answer));
                 break;
         }
     }
