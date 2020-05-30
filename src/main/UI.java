@@ -204,7 +204,9 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(153, 102, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(254, 254, 254));
         jButton3.setText("CE");
         jButton3.setToolTipText("");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +215,9 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(153, 102, 0));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(254, 254, 254));
         jButton4.setText("C");
         jButton4.setToolTipText("");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -251,7 +255,7 @@ public class UI extends javax.swing.JFrame {
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(153, 102, 0));
+        jTextField1.setForeground(new java.awt.Color(132, 90, 6));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField1.setText("0");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -323,7 +327,9 @@ public class UI extends javax.swing.JFrame {
             }
         });
 
+        jButton21.setBackground(new java.awt.Color(153, 102, 0));
         jButton21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton21.setForeground(new java.awt.Color(254, 254, 254));
         jButton21.setText("+");
         jButton21.setToolTipText("");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
