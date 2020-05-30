@@ -13,7 +13,17 @@ public class UI extends javax.swing.JFrame {
         jRadioButton1.setEnabled(false);
     }
     
-    public void arithmeticOperation(){
+    private void printNumber(String number){
+        String textField = jTextField1.getText();
+        
+        if(textField.equals("0")){
+            jTextField1.setText(number);
+        }else{
+            jTextField1.setText(jTextField1.getText() + number);
+        }
+    }
+    
+    private void arithmeticOperation(){
         
         // This object has a method to limit output string
         // Max of 6 numbers after comma
@@ -59,7 +69,7 @@ public class UI extends javax.swing.JFrame {
     }
     
     // Enable all the buttons
-    public void enableAll(){
+    private void enableAll(){
         
         jTextField1.setEnabled(true);
         jButton3.setEnabled(true);
@@ -84,7 +94,7 @@ public class UI extends javax.swing.JFrame {
     }
     
     // Disable all the buttons
-    public void disableAll(){
+    private void disableAll(){
         
         jRadioButton1.setEnabled(true);
         jTextField1.setEnabled(false);
@@ -243,6 +253,7 @@ public class UI extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(153, 102, 0));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField1.setText("0");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -585,7 +596,7 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTextField1.setText("");
+        jTextField1.setText("0");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -596,7 +607,7 @@ public class UI extends javax.swing.JFrame {
         
         num = Double.parseDouble(jTextField1.getText());
         calculation = 5;
-        jTextField1.setText("");
+        jTextField1.setText("0");
         jLabel1.setText(num + "%");
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -604,47 +615,53 @@ public class UI extends javax.swing.JFrame {
         
         num = Double.parseDouble(jTextField1.getText());
         calculation = 4;
-        jTextField1.setText("");
+        jTextField1.setText("0");
         jLabel1.setText(num + "/");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "7");
+        
+        printNumber("7");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "8");
+        
+        printNumber("8");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "9");
+        
+        printNumber("9");
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         
         num = Double.parseDouble(jTextField1.getText());
         calculation = 3;
-        jTextField1.setText("");
+        jTextField1.setText("0");
         jLabel1.setText(num + "x");
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "4");
+        
+        printNumber("4");
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "5");
+        
+        printNumber("5");
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "6");
+        
+        printNumber("6");
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         
         num = Double.parseDouble(jTextField1.getText());
         calculation = 2;
-        jTextField1.setText("");
+        jTextField1.setText("0");
         jLabel1.setText(num + "-");
     }//GEN-LAST:event_jButton13ActionPerformed
 
@@ -654,25 +671,28 @@ public class UI extends javax.swing.JFrame {
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // Every time the button is pressed will be added '1' to jTextFiled Object
-        jTextField1.setText(jTextField1.getText() + "1");
+        printNumber("1");
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "3");
+        
+        printNumber("3");
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "2");
+        
+        printNumber("2");
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "0");
+        
+        printNumber("0");
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         num = Double.parseDouble(jTextField1.getText());
         calculation = 1;
-        jTextField1.setText("");
+        jTextField1.setText("0");
         jLabel1.setText(num + "+");
     }//GEN-LAST:event_jButton21ActionPerformed
 
