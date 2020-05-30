@@ -509,6 +509,8 @@ public class UI extends javax.swing.JFrame {
 
         jButton4.getAccessibleContext().setAccessibleName("SQR");
 
+        jMenuBar1.setBackground(new java.awt.Color(153, 102, 0));
+
         jMenu1.setText("File");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
@@ -604,19 +606,23 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        
         jTextField1.setText("0");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        jTextField1.setText(jTextField1.getText() + "sqrt");
+        
+        jTextField1.setText("0");
+        jLabel1.setText("");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         
-        num = Double.parseDouble(jTextField1.getText());
-        calculation = 5;
-        jTextField1.setText("0");
-        jLabel1.setText(num + "%");
+        jTextField1.setText(jTextField1.getText() + "sqrt");
+        // num = Double.parseDouble(jTextField1.getText());
+        // calculation = 5;
+        // jTextField1.setText("0");
+        // jLabel1.setText(num + "%");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
