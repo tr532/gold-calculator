@@ -4,13 +4,21 @@ import java.text.DecimalFormat;
 
 public class UI extends javax.swing.JFrame {
 
-    double num, answer;
-    int calculation;
+    private double num, answer;
+    private int calculation;
     
     public UI() {
         
         initComponents();
         jRadioButton1.setEnabled(false);
+    }
+    
+    private void clearBuffer(){
+        jLabel1.setText("");
+    }
+    
+    private void clearScreen(){
+        jTextField1.setText("0");
     }
     
     private void printNumber(String number){
@@ -39,6 +47,7 @@ public class UI extends javax.swing.JFrame {
                 // jTextField1.setText(Double.toString(answer)); - former way to print
                 // format() method returns a String
                 jTextField1.setText(decimalFormat.format(answer)); 
+                
                 break;
                 
             case 2:
@@ -514,7 +523,7 @@ public class UI extends javax.swing.JFrame {
         jMenu1.setText("File");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
-        jMenuItem1.setText("Clear");
+        jMenuItem1.setText("Clear entry");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -607,13 +616,13 @@ public class UI extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-        jTextField1.setText("0");
+        clearScreen();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         
-        jTextField1.setText("0");
-        jLabel1.setText("");
+        clearScreen();
+        clearBuffer();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -629,7 +638,7 @@ public class UI extends javax.swing.JFrame {
         
         num = Double.parseDouble(jTextField1.getText());
         calculation = 4;
-        jTextField1.setText("0");
+        clearScreen();
         jLabel1.setText(num + "/");
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -652,7 +661,7 @@ public class UI extends javax.swing.JFrame {
         
         num = Double.parseDouble(jTextField1.getText());
         calculation = 3;
-        jTextField1.setText("0");
+        clearScreen();
         jLabel1.setText(num + "x");
     }//GEN-LAST:event_jButton9ActionPerformed
 
@@ -675,7 +684,7 @@ public class UI extends javax.swing.JFrame {
         
         num = Double.parseDouble(jTextField1.getText());
         calculation = 2;
-        jTextField1.setText("0");
+        clearScreen();
         jLabel1.setText(num + "-");
     }//GEN-LAST:event_jButton13ActionPerformed
 
@@ -706,14 +715,14 @@ public class UI extends javax.swing.JFrame {
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         num = Double.parseDouble(jTextField1.getText());
         calculation = 1;
-        jTextField1.setText("0");
-        jLabel1.setText(num + "+");
+        clearScreen();
+        jLabel1.setText(num + "+");    
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // Call arithmetic operation
         arithmeticOperation();
-        jLabel1.setText("");
+        clearBuffer();
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
