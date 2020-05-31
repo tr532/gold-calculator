@@ -1,6 +1,7 @@
 package main;
 
 import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
 
 public class UI extends javax.swing.JFrame {
 
@@ -21,13 +22,13 @@ public class UI extends javax.swing.JFrame {
         jTextField1.setText("0");
     }
     
-    private void printNumber(String number){
+    private void printNumber(String string){
         String textField = jTextField1.getText();
         
         if(textField.equals("0")){
-            jTextField1.setText(number);
+            jTextField1.setText(string);
         }else{
-            jTextField1.setText(jTextField1.getText() + number);
+            jTextField1.setText(jTextField1.getText() + string);
         }
     }
     
@@ -689,7 +690,16 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        jTextField1.setText(jTextField1.getText() + ".");
+          
+        String string = jTextField1.getText(); 
+        
+        if(string.indexOf('.', string.indexOf('.') + 0) != -1) {
+            
+            System.out.println("Beep!! Impossible!");
+        }else{
+          
+            jTextField1.setText(jTextField1.getText() + ".");  
+        } 
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
