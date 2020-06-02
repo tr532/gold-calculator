@@ -621,7 +621,7 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+         
         clearScreen();
         clearBuffer();
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -695,7 +695,7 @@ public class UI extends javax.swing.JFrame {
         
         if(string.indexOf('.', string.indexOf('.') + 0) != -1) {
             
-            System.out.println("Beep!! Impossible!");
+            System.err.println("Error 0: Multiple dot");
         }else{
           
             jTextField1.setText(jTextField1.getText() + ".");  
@@ -731,8 +731,14 @@ public class UI extends javax.swing.JFrame {
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // Call arithmetic operation
-        arithmeticOperation();
-        clearBuffer();
+        if(jLabel1.getText() != ""){
+            arithmeticOperation();
+            clearBuffer();
+        }else{
+            // Do nothing
+            System.err.println("Error 1: Clear buffer");
+        }
+            
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
