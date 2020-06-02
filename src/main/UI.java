@@ -25,7 +25,7 @@ public class UI extends javax.swing.JFrame {
     private void printNumber(String string){
         String textField = jTextField1.getText();
         
-        if(textField.equals("0")){
+        if(textField.equals("0") || textField.equals("impossible") || textField.equals("undefined")){
             jTextField1.setText(string);
         }else{
             jTextField1.setText(jTextField1.getText() + string);
@@ -65,8 +65,19 @@ public class UI extends javax.swing.JFrame {
                 
             case 4:
                 // DIVision
-                answer = num / Double.parseDouble(jTextField1.getText());
-                jTextField1.setText(decimalFormat.format(answer));
+                double num2 = Double.parseDouble(jTextField1.getText());
+                
+                if(num == 0.0 && num2 == 0.0){
+                    jTextField1.setText("undefined");
+                    System.err.println("Error 2: Undefined operation");
+                }else if(num2 == 0.0){
+                    jTextField1.setText("impossible");
+                    System.err.println("Error 3: Impossible operation");
+                }else{
+                    answer = num / num2;
+                    jTextField1.setText(decimalFormat.format(answer));
+                }
+                
                 
                 break;
             
