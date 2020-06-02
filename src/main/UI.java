@@ -5,8 +5,13 @@ import javax.swing.JOptionPane;
 
 public class UI extends javax.swing.JFrame {
 
-    private double num, answer;
+    private double num, answer, buffer;
     private int calculation;
+    private boolean sequenceFlag = false;
+    
+    // This object has a method to limit output string
+    // Max of 6 numbers after comma
+    private DecimalFormat decimalFormat = new DecimalFormat("#.######");
     
     public UI() {
         
@@ -34,9 +39,7 @@ public class UI extends javax.swing.JFrame {
     
     private void arithmeticOperation(){
         
-        // This object has a method to limit output string
-        // Max of 6 numbers after comma
-        DecimalFormat decimalFormat = new DecimalFormat("#.######");
+        
         
         switch(calculation){
             
@@ -405,7 +408,7 @@ public class UI extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 101, 0));
+        jLabel1.setForeground(new java.awt.Color(1, 1, 1));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setToolTipText("");
 
@@ -651,7 +654,14 @@ public class UI extends javax.swing.JFrame {
         num = Double.parseDouble(jTextField1.getText());
         calculation = 4;
         clearScreen();
-        jLabel1.setText(num + "/");
+        
+        if(jLabel1.getText() == ""){
+            buffer = num;
+            jLabel1.setText(num + "/");
+        }else{
+            jLabel1.setText((buffer /= num) + "/");
+            sequenceFlag = true;
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -674,7 +684,14 @@ public class UI extends javax.swing.JFrame {
         num = Double.parseDouble(jTextField1.getText());
         calculation = 3;
         clearScreen();
-        jLabel1.setText(num + "x");
+        
+        if(jLabel1.getText() == ""){
+            buffer = num;
+            jLabel1.setText(num + "x");
+        }else{
+            jLabel1.setText((buffer *= num) + "x");
+            sequenceFlag = true;
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -697,7 +714,14 @@ public class UI extends javax.swing.JFrame {
         num = Double.parseDouble(jTextField1.getText());
         calculation = 2;
         clearScreen();
-        jLabel1.setText(num + "-");
+        
+        if(jLabel1.getText() == ""){
+            buffer = num;
+            jLabel1.setText(num + "-");
+        }else{
+            jLabel1.setText((buffer -= num) + "-");
+            sequenceFlag = true;
+        }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
@@ -737,19 +761,31 @@ public class UI extends javax.swing.JFrame {
         num = Double.parseDouble(jTextField1.getText());
         calculation = 1;
         clearScreen();
-        jLabel1.setText(num + "+");    
+        
+        if(jLabel1.getText() == ""){
+            buffer = num;
+            jLabel1.setText(num + "+");
+        }else{
+            jLabel1.setText((buffer += num) + "+");
+            sequenceFlag = true;
+        }
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // Call arithmetic operation
-        if(jLabel1.getText() != ""){
+ 
+        if(sequenceFlag == true){
+            
+            jTextField1.setText(decimalFormat.format(buffer));
+            clearBuffer();
+            sequenceFlag = false;
+        }else if(jLabel1.getText() != ""){
+            
             arithmeticOperation();
             clearBuffer();
         }else{
             // Do nothing
             System.err.println("Error 1: Clear buffer");
-        }
-            
+        }   
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
