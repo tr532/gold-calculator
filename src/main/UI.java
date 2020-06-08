@@ -1,6 +1,8 @@
 package main;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 public class UI extends javax.swing.JFrame {
@@ -12,6 +14,8 @@ public class UI extends javax.swing.JFrame {
     // This object has a method to limit output string
     // Max of 6 numbers after comma
     private DecimalFormat decimalFormat = new DecimalFormat("#.######");
+    //private NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
+    //DecimalFormat decimalFormat = (DecimalFormat)numberFormat;
     
     public UI() {
         
@@ -50,20 +54,20 @@ public class UI extends javax.swing.JFrame {
                 // Displaying the result
                 // jTextField1.setText(Double.toString(answer)); - former way to print
                 // format() method returns a String
-                jTextField1.setText(decimalFormat.format(answer)); 
+                jTextField1.setText(decimalFormat.format(answer).replace(',', '.')); 
                 
                 break;
                 
             case 2:
                 // SUBstraction
                 answer = num - Double.parseDouble(jTextField1.getText());
-                jTextField1.setText(decimalFormat.format(answer));
+                jTextField1.setText(decimalFormat.format(answer).replace(',', '.'));
                 break;
                 
             case 3:
                 // MULTiplication
                 answer = num * Double.parseDouble(jTextField1.getText());
-                jTextField1.setText(decimalFormat.format(answer));
+                jTextField1.setText(decimalFormat.format(answer).replace(',', '.'));
                 break;
                 
             case 4:
@@ -78,7 +82,7 @@ public class UI extends javax.swing.JFrame {
                     System.err.println("Error 3: Impossible operation");
                 }else{
                     answer = num / num2;
-                    jTextField1.setText(decimalFormat.format(answer));
+                    jTextField1.setText(decimalFormat.format(answer).replace(',', '.'));
                 }
                 
                 
@@ -772,10 +776,11 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
- 
+  
+        
         if(sequenceFlag == true){
             
-            jTextField1.setText(decimalFormat.format(buffer));
+            jTextField1.setText(decimalFormat.format(buffer).replace(',', '.'));
             clearBuffer();
             sequenceFlag = false;
         }else if(jLabel1.getText() != ""){
