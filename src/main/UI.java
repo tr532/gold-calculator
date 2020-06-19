@@ -13,7 +13,7 @@ public class UI extends javax.swing.JFrame {
     
     // This object has a method to limit output string
     // Max of 6 numbers after comma
-    private DecimalFormat decimalFormat = new DecimalFormat("#.############");
+    private DecimalFormat decimalFormat = new DecimalFormat("#.##############################");
     //private NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
     //DecimalFormat decimalFormat = (DecimalFormat)numberFormat;
     
