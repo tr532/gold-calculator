@@ -10,6 +10,7 @@ public class UI extends javax.swing.JFrame {
     private double num, answer, buffer;
     private int calculation;
     private boolean sequenceFlag = false;
+    private String answerString;
     
     // This object has a method to limit output string
     // Max of 6 numbers after comma
@@ -34,11 +35,29 @@ public class UI extends javax.swing.JFrame {
     private void printNumber(String string){
         String textField = jTextField1.getText();
         
+        String string2 = jTextField1.getText() + string;
+        
         if(textField.equals("0") || textField.equals("impossible") || textField.equals("undefined")){
             jTextField1.setText(string);
-        }else{
-            jTextField1.setText(jTextField1.getText() + string);
-        }
+            
+        }else if(string2.length() > 12){
+                    int resize = 2 * ( string2.length() - 12);
+                    if( resize > 24){
+                        resize = 24;
+                    }
+                    jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 -resize));
+                    jTextField1.setText(string2);
+                    System.out.println("hey");
+                }else{
+                    jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
+                    jTextField1.setText(string2);
+                    System.out.println(string2.length());
+                }
+            
+            //jTextField1.setText(jTextField1.getText() + string);
+            
+            
+        
     }
     
     private void arithmeticOperation(){
@@ -67,7 +86,14 @@ public class UI extends javax.swing.JFrame {
             case 3:
                 // MULTiplication
                 answer = num * Double.parseDouble(jTextField1.getText());
-                jTextField1.setText(decimalFormat.format(answer).replace(',', '.'));
+                answerString = decimalFormat.format(answer).replace(',', '.');
+                if(answerString.length() > 12){
+                        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 - ( 2 * ( answerString.length() - 12))));
+                        jTextField1.setText(answerString);
+                    }else{
+                        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
+                        jTextField1.setText(answerString);
+                    }
                 break;
                 
             case 4:
@@ -82,7 +108,14 @@ public class UI extends javax.swing.JFrame {
                     System.err.println("Error 3: Impossible operation");
                 }else{
                     answer = num / num2;
-                    jTextField1.setText(decimalFormat.format(answer).replace(',', '.'));
+                    answerString = decimalFormat.format(answer).replace(',', '.');
+                    if(answerString.length() > 12){
+                        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 - ( 2 * ( answerString.length() - 12))));
+                        jTextField1.setText(answerString);
+                    }else{
+                        jTextField1.setText(answerString);
+                    }
+                    
                 }
                 
                 
@@ -634,12 +667,12 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
         clearScreen();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-         
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
         clearScreen();
         clearBuffer();
     }//GEN-LAST:event_jButton4ActionPerformed
