@@ -35,29 +35,27 @@ public class UI extends javax.swing.JFrame {
     private void printNumber(String string){
         String textField = jTextField1.getText();
         
-        String string2 = jTextField1.getText() + string;
+        //String string2 = textField + string;
         
         if(textField.equals("0") || textField.equals("impossible") || textField.equals("undefined")){
             jTextField1.setText(string);
             
-        }else if(string2.length() > 12){
-                    int resize = 2 * ( string2.length() - 12);
-                    if( resize > 24){
-                        resize = 24;
-                    }
-                    jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 -resize));
-                    jTextField1.setText(string2);
-                    System.out.println("hey");
-                }else{
-                    jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
-                    jTextField1.setText(string2);
-                    System.out.println(string2.length());
-                }
+        }else {//if(string2.length() > 12){
+                //    int resize = 2 * ( string2.length() - 12);
+                  //  if( resize > 24){
+                    //    resize = 24;
+                    //}
+                    //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 -resize));
+                    //jTextField1.setText(string2);
+                    //System.out.println("hey");
+                //}else{
+                    //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
+                    //jTextField1.setText(string2);
+                    //System.out.println(string2.length());
+                //}
             
-            //jTextField1.setText(jTextField1.getText() + string);
-            
-            
-        
+            jTextField1.setText(jTextField1.getText() + string);
+        }
     }
     
     private void arithmeticOperation(){
@@ -87,14 +85,14 @@ public class UI extends javax.swing.JFrame {
                 // MULTiplication
                 answer = num * Double.parseDouble(jTextField1.getText());
                 answerString = decimalFormat.format(answer).replace(',', '.');
-                if(answerString.length() > 12){
-                        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 - ( 2 * ( answerString.length() - 12))));
+                //if(answerString.length() > 12){
+                        //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 - ( 2 * ( answerString.length() - 12))));
+                        //jTextField1.setText(answerString);
+                    //}else{
+                        //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
                         jTextField1.setText(answerString);
-                    }else{
-                        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
-                        jTextField1.setText(answerString);
-                    }
-                break;
+                    //}
+                //break;
                 
             case 4:
                 // DIVision
@@ -107,14 +105,14 @@ public class UI extends javax.swing.JFrame {
                     jTextField1.setText("impossible");
                     System.err.println("Error 3: Impossible operation");
                 }else{
-                    answer = num / num2;
-                    answerString = decimalFormat.format(answer).replace(',', '.');
-                    if(answerString.length() > 12){
-                        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 - ( 2 * ( answerString.length() - 12))));
+                    //answer = num / num2;
+                    //answerString = decimalFormat.format(answer).replace(',', '.');
+                    //if(answerString.length() > 12){
+                        //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 - ( 2 * ( answerString.length() - 12))));
+                        //jTextField1.setText(answerString);
+                    //}else{
                         jTextField1.setText(answerString);
-                    }else{
-                        jTextField1.setText(answerString);
-                    }
+                    //}
                     
                 }
                 
@@ -672,7 +670,7 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
+        //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
         clearScreen();
         clearBuffer();
     }//GEN-LAST:event_jButton4ActionPerformed
