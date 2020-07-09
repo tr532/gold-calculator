@@ -56,7 +56,7 @@ public class UI extends javax.swing.JFrame {
                     //jTextField1.setText(string2);
                     //System.out.println(string2.length());
                     System.err.println("Error 4: Beyond 16 characters");
-                    JOptionPane.showMessageDialog(UI.this, "You canot supass 16 characters limit ","Alert", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(UI.this, "You can't surpass 16 characters limit  ","Alert", JOptionPane.WARNING_MESSAGE);
                     
         }else{
             jTextField1.setText(jTextField1.getText() + string);
