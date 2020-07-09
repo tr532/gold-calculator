@@ -84,15 +84,16 @@ public class UI extends javax.swing.JFrame {
             case 3:
                 // MULTiplication
                 answer = num * Double.parseDouble(jTextField1.getText());
-                answerString = decimalFormat.format(answer).replace(',', '.');
+                jTextField1.setText(decimalFormat.format(answer).replace(',', '.'));
+                System.out.println(decimalFormat.format(answer).replace(',', '.'));
                 //if(answerString.length() > 12){
                         //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 - ( 2 * ( answerString.length() - 12))));
                         //jTextField1.setText(answerString);
                     //}else{
                         //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
-                        jTextField1.setText(answerString);
+                        //jTextField1.setText(answerString);
                     //}
-                //break;
+                break;
                 
             case 4:
                 // DIVision
@@ -105,8 +106,8 @@ public class UI extends javax.swing.JFrame {
                     jTextField1.setText("impossible");
                     System.err.println("Error 3: Impossible operation");
                 }else{
-                    //answer = num / num2;
-                    //answerString = decimalFormat.format(answer).replace(',', '.');
+                    answer = num / num2;
+                    answerString = decimalFormat.format(answer).replace(',', '.');
                     //if(answerString.length() > 12){
                         //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 - ( 2 * ( answerString.length() - 12))));
                         //jTextField1.setText(answerString);
@@ -313,7 +314,7 @@ public class UI extends javax.swing.JFrame {
         });
 
         jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(132, 90, 6));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField1.setText("0");
