@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 public class UI extends javax.swing.JFrame {
 
-    private double num, answer, buffer;
+    private double  num, answer, buffer;
     private int calculation;
     private boolean sequenceFlag = false;
     private String answerString;
@@ -313,7 +313,7 @@ public class UI extends javax.swing.JFrame {
         });
 
         jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(132, 90, 6));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTextField1.setText("0");
@@ -665,7 +665,7 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
+        //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
         clearScreen();
     }//GEN-LAST:event_jButton3ActionPerformed
 
