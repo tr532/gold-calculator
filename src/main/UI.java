@@ -3,6 +3,7 @@ package main;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class UI extends javax.swing.JFrame {
@@ -11,6 +12,7 @@ public class UI extends javax.swing.JFrame {
     private int calculation;
     private boolean sequenceFlag = false;
     private String answerString;
+    //private JFrame f;
     
     // This object has a method to limit output string
     // Max of 6 numbers after comma
@@ -21,6 +23,7 @@ public class UI extends javax.swing.JFrame {
     public UI() {
         
         initComponents();
+        //f = new JFrame();
         jRadioButton1.setEnabled(false);
     }
     
@@ -35,12 +38,12 @@ public class UI extends javax.swing.JFrame {
     private void printNumber(String string){
         String textField = jTextField1.getText();
         
-        //String string2 = textField + string;
+        String string2 = textField + string;
         
         if(textField.equals("0") || textField.equals("impossible") || textField.equals("undefined")){
             jTextField1.setText(string);
             
-        }else {//if(string2.length() > 12){
+        }else if(string2.length() > 16){
                 //    int resize = 2 * ( string2.length() - 12);
                   //  if( resize > 24){
                     //    resize = 24;
@@ -52,8 +55,10 @@ public class UI extends javax.swing.JFrame {
                     //jTextField1.setFont(new java.awt.Font("Tahoma", 1, 36 ));
                     //jTextField1.setText(string2);
                     //System.out.println(string2.length());
-                //}
-            
+                    System.err.println("Error 4: Beyond 16 characters");
+                    JOptionPane.showMessageDialog(UI.this, "You canot supass 16 characters limit ","Alert", JOptionPane.WARNING_MESSAGE);
+                    
+        }else{
             jTextField1.setText(jTextField1.getText() + string);
         }
     }
